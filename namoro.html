@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vai dar namoro ?</title>
+    <link rel="shortcut icon" href="sakura.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Vai dar namoro ?</h1>
+    <p>Escreva o nome de duas pessoas e descubra se <strong> VAI DAR NAMORO ?</strong></p>
+    <section>
+        <h1>Calcular amor</h1>
+        Nome da mulher <input type="text" name="m" id="m"> <br>
+        Nome do homem <input type="text" name="h" id="h"> <br>
+        <input type="button" value="Calcular" onclick="calcular()">
+
+    </section>
+    <p><div id="resultado"></div></p>
+   
+   <script>
+
+    function calcular(){
+        //resultado.innerHTML = Number(m.length)
+        var resposta = ""
+
+        m.value.length <= h.value.length ? resposta = m.value.length + 1 + h.value.length : resposta =  m.value.length + h.value.length
+
+        resposta%2 == 0 ? resultado.innerHTML = "Dois namoradinhos <br> Parabéns essas o relacionamento dos dois durará a vida inteira" : resultado.innerHTML = "Aaaah que peninha.<br> O relacionando entre os dois não dará certo :( <br> Mas não se esqueça, isto é apenas um algoritimo bobo, ele não sabe nada sobre o <strong>amor</strong> "
+
+    }
+    </script>
+</body>
+</html>
