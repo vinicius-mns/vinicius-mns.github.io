@@ -41,8 +41,9 @@ div{
     width: 236px;
     margin: auto ;
     box-shadow: 20px 20px 1px rgba(0, 0, 0, 0.534);
-    margin-block: 10px;
     display: inline-block;
+    vertical-align: top;
+    margin-top: 3%;
 }
 
 #negrito{

@@ -10,7 +10,8 @@ body{
 div{
     margin: auto;
     margin-top: 55px;
-    text-align: center 
+    text-align: center;
+    vertical-align: top;
 }
 header{
     color: #350f0fde;
