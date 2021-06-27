@@ -35,7 +35,7 @@ h1{
     height: 80%;
     border-radius: 10%;
 }
-section{
+main{
     width: 600px;
     height: 1200px;
     margin: auto ;
@@ -84,7 +84,7 @@ h2{
     color: rgb(205, 112, 93);
     text-align: center;
 }
-div{
+article, footer{
     text-align: start;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Helvetica, sans-serif ;
     color: #350f0fde;
