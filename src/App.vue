@@ -1,29 +1,53 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import QuemSou from './pages/QuemSou.vue';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+  <div class="app">
+    <div class="pages">
+      <QuemSou />
     </div>
-  </header>
-
-  <RouterView />
+    
+    <div class="buttons"><button>A</button><button>B</button></div>
+  </div>
 </template>
 
-<style>
+<style lang="scss">
 * {
   margin: 0;
   padding: 0;
+}
+
+// mobile
+@media screen and (max-width: 500px) {
+  .pages {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .buttons {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+    background-color: blue;
+    display: flex;
+
+    & button {
+      width: 50%;
+    }
+  }
+}
+
+// desktop
+@media screen and (min-width: 500px) {
+  .pages {
+    width: 100%;
+  }
+  
+  .buttons {
+    display: none;
+  }
 }
 
 </style>
