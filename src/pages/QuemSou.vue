@@ -18,17 +18,20 @@ const markdownTxt = marked(txt)
     width: 100%;
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    
     & .img-container {
-      background-color: red;
-      width: 100%;
+      background-color: rgb(215, 165, 165);
+      border: solid black 1.5px;
+      width: 94%;
       height: 10rem;
+      margin-top: 1rem;
+      border-radius: 8px;
     }
 
     & .content {
-      text-align: justify;
-      margin: 1rem;
-      font-size: 1.2rem;
+      margin-top: 1rem;
+      width: 94%;
     }
   }
 </style>

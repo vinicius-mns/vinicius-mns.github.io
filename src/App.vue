@@ -22,19 +22,32 @@ import QuemSou from './pages/QuemSou.vue';
 @media screen and (max-width: 500px) {
   .pages {
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
+    font-size: 0.9rem;
+    text-align: justify;
+    background-color: rgb(250, 241, 241);
+  }
+
+  h1 {
+    font-size: 2rem;
   }
   
   .buttons {
     width: 100%;
     position: fixed;
-    bottom: 0;
+    bottom: 2rem;
 
-    background-color: blue;
     display: flex;
-
+    justify-content: space-around;
+    
     & button {
-      width: 50%;
+      border: solid black 1.5px;
+      background-color: rgb(215, 165, 165);
+      color: black;
+      box-shadow: 6px 6px 0px black;
+      border-radius: 8px;
+      width: 40%;
+      height: 2.5rem;
     }
   }
 }
