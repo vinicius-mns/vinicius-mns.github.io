@@ -39,6 +39,19 @@ import gear from '@/assets/gear.png'
   border-radius: 0.5rem;
 }
 
+.neo-button {
+  border: solid black 0.12rem;
+  background-color: rgb(215, 165, 165);
+  color: black;
+  box-shadow: 0.2rem 0.2rem black;
+  border-radius: 0.5rem;
+
+  &:active {
+    transform: translate(0.2rem, 0.2rem);
+        box-shadow: none;
+  }
+}
+
 // mobile
 @media screen and (max-width: 500px) {
   h1 {
