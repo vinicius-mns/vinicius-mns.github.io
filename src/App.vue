@@ -56,6 +56,11 @@ h1 {
     border-radius: 8px;
     width: 40%;
     height: 2.5rem;
+
+    &:active {
+      transform: translate(6px, 6px);
+      box-shadow: none;
+    }
   }
 }
 }
