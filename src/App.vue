@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import QuemSou from './pages/QuemSou.vue';
 import RouterLinks from './components/RouterLinks.vue'
+import ConfigCard from './components/configCard/ConfigCard.vue'
 import gear from '@/assets/gear.png'
 </script>
 
 <template>
   <div class="app">
-    <!-- <RouterLinks /> -->
+    <ConfigCard />
     <div class="pages">
       <QuemSou />
     </div>
     
     <div class="buttons">
-      <button class="config"><img :src="gear" alt="config"></button>
+      <button class="config neo-button"><img :src="gear" alt="config"></button>
       <div class="links">
         <RouterLinks />
       </div>
@@ -81,11 +82,6 @@ import gear from '@/assets/gear.png'
     justify-content: space-between;
     
     & button {
-      border: solid black 2px;
-      background-color: rgb(215, 165, 165);
-      color: black;
-      box-shadow: 6px 6px 0px black;
-      border-radius: 8px;
       height: 2rem;
 
       &.config {
@@ -94,11 +90,6 @@ import gear from '@/assets/gear.png'
           height: 95%;
           background-color: transparent;
         }
-      }
-
-      &:active {
-        transform: translate(6px, 6px);
-        box-shadow: none;
       }
     }
 
@@ -121,4 +112,7 @@ import gear from '@/assets/gear.png'
   }
 }
 
+h1, h2, h3, p {
+  background-color: transparent;
+}
 </style>
