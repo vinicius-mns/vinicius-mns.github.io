@@ -26,7 +26,7 @@ const markdownTxt = marked(txt)
       background-color: rgb(215, 165, 165);
       border: solid black 2px;
       box-shadow: 6px 6px 0px black;
-      width: 94%;
+      width: 100%;
       height: 10rem;
       margin-top: 1rem;
       border-radius: 8px;
@@ -44,7 +44,7 @@ const markdownTxt = marked(txt)
 
     & .content {
       margin-top: 1rem;
-      width: 94%;
+      width: 100%;
     }
   }
 </style>

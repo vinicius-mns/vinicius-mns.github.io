@@ -1,68 +1,93 @@
 <script setup lang="ts">
 import QuemSou from './pages/QuemSou.vue';
+import RouterLinks from './components/RouterLinks.vue'
+import gear from '@/assets/gear.png'
 </script>
 
 <template>
   <div class="app">
+    <!-- <RouterLinks /> -->
     <div class="pages">
       <QuemSou />
     </div>
     
-    <div class="buttons"><button>A</button><button>B</button></div>
+    <div class="buttons">
+      <button class="config"><img :src="gear" alt="config"></button>
+      <div class="links">
+        <RouterLinks />
+      </div>
+    </div>
   </div>
 </template>
 
 <style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-}
-
-// mobile
-@media screen and (max-width: 500px) {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Red+Hat+Display:wght@300&display=swap');
 
 * {
+  margin: 0;
+  padding: 0;
   background-color: rgb(178, 212, 156);
   font-family: 'Montserrat', sans-serif;
   font-family: 'Red Hat Display', sans-serif;
   font-size: 1rem;
 }
 
-.pages {
-  width: 100%;
-  margin-bottom: 5rem;
-  text-align: justify;
-}
+// mobile
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 2rem;
+  }
 
-h1 {
-  font-size: 2rem;
-}
+  .app {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.buttons {
-  width: 100%;
-  position: fixed;
-  bottom: 2rem;
-  background-color: transparent;
+  .pages {
+    width: 92%;
+    margin-bottom: 5rem;
+    text-align: justify;
+  }
 
-  display: flex;
-  justify-content: space-around;
-  
-  & button {
-    border: solid black 2px;
-    background-color: rgb(215, 165, 165);
-    color: black;
-    box-shadow: 6px 6px 0px black;
-    border-radius: 8px;
-    width: 40%;
-    height: 2.5rem;
+  .buttons {
+    position: fixed;
+    width: 92%;
+    height: 3.5rem;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    & button {
+      border: solid black 2px;
+      background-color: rgb(215, 165, 165);
+      color: black;
+      box-shadow: 6px 6px 0px black;
+      border-radius: 8px;
+      height: 2rem;
 
-    &:active {
-      transform: translate(6px, 6px);
-      box-shadow: none;
+      &.config {
+        width: 10%;
+        & img {
+          height: 95%;
+          background-color: transparent;
+        }
+      }
+
+      &:active {
+        transform: translate(6px, 6px);
+        box-shadow: none;
+      }
+    }
+
+    & .links {
+      width: 85%;
+      height: 100%;
+      overflow-y: scroll;
     }
   }
-}
 }
 
 // desktop
