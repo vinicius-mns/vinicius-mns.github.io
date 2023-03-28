@@ -20,44 +20,44 @@ import QuemSou from './pages/QuemSou.vue';
 
 // mobile
 @media screen and (max-width: 500px) {
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Red+Hat+Display:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Red+Hat+Display:wght@300&display=swap');
 
-  * {
-    background-color: rgb(178, 212, 156);
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Red Hat Display', sans-serif;
-  }
+* {
+  background-color: rgb(178, 212, 156);
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
+}
 
-  .pages {
-    width: 100%;
-    margin-bottom: 5rem;
-    font-size: 0.9rem;
-    text-align: justify;
-  }
+.pages {
+  width: 100%;
+  margin-bottom: 5rem;
+  font-size: 0.9rem;
+  text-align: justify;
+}
 
-  h1 {
-    font-size: 2rem;
-  }
+h1 {
+  font-size: 2rem;
+}
+
+.buttons {
+  width: 100%;
+  position: fixed;
+  bottom: 2rem;
+  background-color: transparent;
+
+  display: flex;
+  justify-content: space-around;
   
-  .buttons {
-    width: 100%;
-    position: fixed;
-    bottom: 2rem;
-    background-color: transparent;
-
-    display: flex;
-    justify-content: space-around;
-    
-    & button {
-      border: solid black 2px;
-      background-color: rgb(215, 165, 165);
-      color: black;
-      box-shadow: 6px 6px 0px black;
-      border-radius: 8px;
-      width: 40%;
-      height: 2.5rem;
-    }
+  & button {
+    border: solid black 2px;
+    background-color: rgb(215, 165, 165);
+    color: black;
+    box-shadow: 6px 6px 0px black;
+    border-radius: 8px;
+    width: 40%;
+    height: 2.5rem;
   }
+}
 }
 
 // desktop
