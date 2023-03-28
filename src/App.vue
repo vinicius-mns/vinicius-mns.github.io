@@ -20,6 +20,14 @@ import QuemSou from './pages/QuemSou.vue';
 
 // mobile
 @media screen and (max-width: 500px) {
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Red+Hat+Display:wght@300&display=swap');
+
+  * {
+    background-color: rgb(178, 212, 156);
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Red Hat Display', sans-serif;
+  }
+
   .pages {
     width: 100%;
     margin-bottom: 4rem;
