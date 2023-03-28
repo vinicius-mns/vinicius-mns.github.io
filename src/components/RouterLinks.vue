@@ -13,7 +13,7 @@ const mockLinks = [
 
 <template>
   <div class="router-links">
-    <button v-for="text in mockLinks" :key="text"><p>{{ text }}</p></button>
+    <button class="neo-button" v-for="text in mockLinks" :key="text"><p>{{ text }}</p></button>
   </div>
 </template>
 
@@ -27,12 +27,7 @@ const mockLinks = [
   & button {
     height: 2rem;
     margin-left: 2rem;
-
-    & p {
-      background-color: transparent;
-      margin-left: 10px;
-      margin-right: 10px;
-    }
+    padding: 0.2rem;
   }
 }
 </style>
