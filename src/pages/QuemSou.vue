@@ -24,7 +24,8 @@ const markdownTxt = marked(txt)
     
     & .img-container {
       background-color: rgb(215, 165, 165);
-      border: solid black 1.5px;
+      border: solid black 2px;
+      box-shadow: 6px 6px 0px black;
       width: 94%;
       height: 10rem;
       margin-top: 1rem;
@@ -37,6 +38,7 @@ const markdownTxt = marked(txt)
       & img {
         height: 98%;
         margin-left: 30%;
+        background-color: transparent;
       }
     }
 

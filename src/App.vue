@@ -30,10 +30,9 @@ import QuemSou from './pages/QuemSou.vue';
 
   .pages {
     width: 100%;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     font-size: 0.9rem;
     text-align: justify;
-    background-color: rgb(250, 241, 241);
   }
 
   h1 {
@@ -44,12 +43,13 @@ import QuemSou from './pages/QuemSou.vue';
     width: 100%;
     position: fixed;
     bottom: 2rem;
+    background-color: transparent;
 
     display: flex;
     justify-content: space-around;
     
     & button {
-      border: solid black 1.5px;
+      border: solid black 2px;
       background-color: rgb(215, 165, 165);
       color: black;
       box-shadow: 6px 6px 0px black;
