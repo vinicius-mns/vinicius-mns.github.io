@@ -32,6 +32,13 @@ import gear from '@/assets/gear.png'
   font-size: 1rem;
 }
 
+.neo-card {
+  border: solid black 0.1rem;
+  background-color: rgb(215, 165, 165);
+  color: black;
+  border-radius: 0.5rem;
+}
+
 // mobile
 @media screen and (max-width: 500px) {
   h1 {
