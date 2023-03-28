@@ -10,7 +10,7 @@ const markdownTxt = marked(txt)
 
 <template>
   <main>
-    <div class="img-container"><img :src="image" alt="avatart"></div>
+    <div class="img-container neo-card"><img :src="image" alt="avatart"></div>
     <div class="content" v-html="markdownTxt"></div>
   </main>
 </template>
@@ -23,13 +23,9 @@ const markdownTxt = marked(txt)
     align-items: center;
     
     & .img-container {
-      background-color: rgb(215, 165, 165);
-      border: solid black 2px;
-      box-shadow: 6px 6px 0px black;
       width: 100%;
       height: 10rem;
       margin-top: 1rem;
-      border-radius: 8px;
 
       display: flex;
       align-items: end;
