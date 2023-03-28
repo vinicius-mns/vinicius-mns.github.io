@@ -26,12 +26,12 @@ import QuemSou from './pages/QuemSou.vue';
   background-color: rgb(178, 212, 156);
   font-family: 'Montserrat', sans-serif;
   font-family: 'Red Hat Display', sans-serif;
+  font-size: 1rem;
 }
 
 .pages {
   width: 100%;
   margin-bottom: 5rem;
-  font-size: 0.9rem;
   text-align: justify;
 }
 
