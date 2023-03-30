@@ -7,15 +7,23 @@ import gear from '@/assets/gear.png'
 
 <template>
   <div class="app">
-    <ConfigCard />
-    <div class="pages">
-      <QuemSou />
+    <div class="navigation" :class="{toggleNav}" :style="[style.cardStyle, style.navigationStyle]">
+      <button @click="toggleNav = !toggleNav" class="button-toggle-nav">
+        <div></div><div></div><div></div>
+      </button>
+      <NavigationBar v-if="!toggleNav" />
     </div>
     
-    <div class="buttons">
-      <button class="config neo-button"><img :src="gear" alt="config"></button>
-      <div class="links">
-        <RouterLinks />
+    <div class="pages">
+      <div class="container-pages">
+        <QuemSou />
+      </div>
+    </div>
+
+    <div class="container-mobile-bar" :style="style.cardStyle">
+      <div class="container-buttons-bar">
+        <button class="settings-button-mobile" :style="style.cardStyle"><img :src="gear" alt="settings"></button>
+        <button class="button-toggle-nav-mobile" :style="style.cardStyle"><p>Ir para</p></button>
       </div>
     </div>
   </div>
