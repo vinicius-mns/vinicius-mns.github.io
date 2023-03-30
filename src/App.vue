@@ -16,6 +16,7 @@ const toggleNav = ref(false)
       <button @click="toggleNav = !toggleNav" class="button-toggle-nav">
         <div></div><div></div><div></div>
       </button>
+      <button class="settings-button" :style="style.cardStyle"><img :src="gear" alt="settings"></button>
       <NavigationBar v-if="!toggleNav" />
     </div>
     
@@ -151,6 +152,17 @@ a {
   .navigation {
     height: 100vh;
     width: 20%;
+
+    & .settings-button {
+      position: absolute;
+      right: 1rem;
+      width: 3rem;
+      height: 2rem;
+      margin: 1rem;
+      & img {
+        height: 100%;
+      }
+    }
   }
 
   .toggleNav {
@@ -183,6 +195,17 @@ a {
   .navigation {
     height: 100vh;
     width: 35%;
+
+    & .settings-button {
+      position: absolute;
+      right: 0;
+      width: 3rem;
+      height: 2rem;
+      margin: 0.5rem;
+      & img {
+        height: 100%;
+      }
+    }
   }
 
   .toggleNav {
