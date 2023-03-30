@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import QuemSou from './pages/QuemSou.vue';
-import RouterLinks from './components/RouterLinks.vue'
-import ConfigCard from './components/configCard/ConfigCard.vue'
+import NavigationBar from './components/navigationBar/NavigationBar.vue'
 import gear from '@/assets/gear.png'
+import { useGlobalStyle } from './stores/globalStyle';
+import { ref } from 'vue';
+
+const style = useGlobalStyle()
+
+const toggleNav = ref(false)
 </script>
 
 <template>
