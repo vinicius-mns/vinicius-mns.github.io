@@ -36,9 +36,16 @@ body {
   background-color: rgb(178, 212, 156);
 }
 
-.neo-button {
-  border: solid black 0.12rem;
-  background-color: rgb(215, 165, 165);
+h1, h2, h3, p, span {
+  margin: 0.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
   color: black;
   box-shadow: 0.2rem 0.2rem black;
   border-radius: 0.5rem;
