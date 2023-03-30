@@ -112,7 +112,35 @@ import gear from '@/assets/gear.png'
   }
 }
 
-h1, h2, h3, p {
-  background-color: transparent;
+// tablet
+@media screen and (min-width: 701px) and (max-width: 1023px) {
+  .app {
+    width: 100%;
+    display: flex;
+  }
+
+  .navigation {
+    height: 100vh;
+    width: 35%;
+  }
+
+  .toggleNav {
+    width: 0;
+  }
+
+  .pages {
+    width: 100%;
+    text-align: justify;
+    overflow-y: scroll;
+    height: 100vh;
+    & .container-pages {
+      width: 80%;
+      margin-left: 10%;
+    }
+  }
+
+  .container-mobile-bar {
+    display: none;
+  }
 }
 </style>
