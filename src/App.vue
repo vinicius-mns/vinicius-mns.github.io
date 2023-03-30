@@ -60,13 +60,6 @@ h1 {
 a {
   text-decoration: none;
   color: black;
-  box-shadow: 0.2rem 0.2rem black;
-  border-radius: 0.5rem;
-
-  &:active {
-    transform: translate(0.2rem, 0.2rem);
-        box-shadow: none;
-  }
 }
 
 .button-toggle-nav {
@@ -127,8 +120,6 @@ a {
         align-items: center;
         justify-content: center;
 
-      &.config {
-        width: 10%;
         & img {
           height: 90%;
           color: black;
@@ -166,8 +157,6 @@ a {
     width: 0;
   }
 
-// desktop
-@media screen and (min-width: 500px) {
   .pages {
     width: 100%;
     text-align: justify;
