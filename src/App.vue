@@ -75,6 +75,8 @@ a {
     font-size: 2rem;
   }
 
+// mobile
+@media screen and (max-width: 700px) {
   .app {
     width: 100%;
     display: flex;
@@ -88,26 +90,51 @@ a {
     text-align: justify;
   }
 
-  .buttons {
+  .container-mobile-bar {
     position: fixed;
-    width: 92%;
-    height: 3.5rem;
-    bottom: 0;
+    width: 50%;
+    height: 3rem;
+    bottom: 1.5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    
-    & button {
-      height: 2rem;
+    justify-content: center;
+
+    & .container-buttons-bar {
+      width: 80%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      & .settings-button-mobile {
+        height: 80%;
+        margin: 0.5rem;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
       &.config {
         width: 10%;
         & img {
-          height: 95%;
-          background-color: transparent;
+          height: 90%;
+          color: black;
         }
       }
+
+      & .button-toggle-nav-mobile {
+        margin: 0.5rem;
+        height: 80%;
+        flex-grow: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
+  }
+  .navigation {
+    display: none;
+  }
+}
 
 // desktop
 @media screen and (min-width: 1025px) {
