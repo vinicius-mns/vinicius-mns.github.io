@@ -142,7 +142,7 @@ a {
 }
 
 // desktop
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
   .app {
     width: 100%;
     display: flex;
