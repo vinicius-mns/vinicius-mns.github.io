@@ -69,11 +69,25 @@ a {
   }
 }
 
-// mobile
-@media screen and (max-width: 500px) {
-  h1 {
-    font-size: 2rem;
+.button-toggle-nav {
+  position: absolute;
+  left: 0;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: none;
+  background-color: transparent;
+
+  & div {
+    width: 100%;
+    height: 0.2rem;
+    border-radius: 10rem;
+    background-color: black;
   }
+}
 
 // mobile
 @media screen and (max-width: 700px) {
