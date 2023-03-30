@@ -27,17 +27,13 @@ import gear from '@/assets/gear.png'
 * {
   margin: 0;
   padding: 0;
-  background-color: rgb(178, 212, 156);
   font-family: 'Montserrat', sans-serif;
   font-family: 'Red Hat Display', sans-serif;
   font-size: 1rem;
 }
 
-.neo-card {
-  border: solid black 0.1rem;
-  background-color: rgb(215, 165, 165);
-  color: black;
-  border-radius: 0.5rem;
+body {
+  background-color: rgb(178, 212, 156);
 }
 
 .neo-button {
