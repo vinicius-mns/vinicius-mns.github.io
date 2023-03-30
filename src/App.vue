@@ -109,21 +109,36 @@ a {
       }
     }
 
-    & .links {
-      width: 85%;
-      height: 100%;
-      overflow-y: scroll;
-    }
+// desktop
+@media screen and (min-width: 1025px) {
+  .app {
+    width: 100%;
+    display: flex;
   }
-}
+
+  .navigation {
+    height: 100vh;
+    width: 20%;
+  }
+
+  .toggleNav {
+    width: 0;
+  }
 
 // desktop
 @media screen and (min-width: 500px) {
   .pages {
     width: 100%;
+    text-align: justify;
+    overflow-y: scroll;
+    height: 100vh;
+    & .container-pages {
+      width: 55%;
+      margin-left: 22.5%;
+    }
   }
   
-  .buttons {
+  .container-mobile-bar {
     display: none;
   }
 }
