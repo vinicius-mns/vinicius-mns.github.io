@@ -9,7 +9,7 @@ export const useGlobalStyle = defineStore('globalStyle', () => {
     borderWidth: '1.6px',
     backgroundColor: 'rgb(215, 165, 165)',
     color: 'black',
-    borderRadius: '0.5rem',
+    borderRadius: '8px',
   })
 
   const navigationStyle = ref({
