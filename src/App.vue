@@ -227,4 +227,23 @@ a {
     display: none;
   }
 }
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  border-radius: 40px;
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 40px;
+
+  &:hover {
+    background-color: black;
+  }
+}
+
+::-webkit-scrollbar-track {
+  height: 90vh;
+}
 </style>
