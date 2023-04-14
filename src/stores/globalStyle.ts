@@ -18,6 +18,10 @@ export const useGlobalStyle = defineStore('globalStyle', () => {
     'border-bottom': 'none',
     'borderRadius': 'none',
   })
+
+  const pageStyle = ref({
+    backgroundColor: 'rgb(178, 212, 156)',
+  })
   
   const changeBorderWidth = (value: string) => {
     cardStyle.value.borderWidth = `${value}px`
@@ -34,6 +38,7 @@ export const useGlobalStyle = defineStore('globalStyle', () => {
   return {
     cardStyle,
     navigationStyle,
+    pageStyle,
     changeBorderWidth,
     changeBorderColor,
     changeBackgroundColor,
