@@ -9,7 +9,6 @@ const mockLinks = [
   'Mais alguma coisa',
   'Outro coisa',
   'Feedbacks',
-  'Outro link',
 ]
 </script>
 
