@@ -1,0 +1,24 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "Projeto 1",
+      "content": "Descrição do projeto 1"
+    },
+    {
+      "id": "2",
+      "title": "Projeto 2",
+      "content": "Descrição do projeto 2"
+    },
+    {
+      "id": "3",
+      "title": "Template",
+      "content": "# Template de Projeto\n\nEste documento serve como um guia para a criação de um projeto de desenvolvimento. Abaixo, você encontrará as seções recomendadas e como preenchê-las adequadamente.\n\n## Descrição do Projeto\nNesta seção, você deve fornecer uma breve descrição do projeto. Explique o objetivo principal e o que você espera alcançar com ele. Por exemplo: *\"Este projeto tem como objetivo desenvolver uma aplicação web que permita aos usuários gerenciar suas tarefas diárias de forma eficiente.\"*\n\n## Tecnologias Utilizadas\nAqui, liste as tecnologias que foram utilizadas no desenvolvimento do projeto. É importante ser específico e incluir:\n\n- **Linguagens**: Indique as linguagens de programação utilizadas, como JavaScript, Python, etc.\n- **Frameworks**: Mencione os frameworks que foram empregados, como React, Django, etc.\n- **Banco de Dados**: Informe qual banco de dados foi utilizado, como MySQL, MongoDB, etc.\n- **Ferramentas**: Liste as ferramentas que auxiliaram no desenvolvimento, como Git, Docker, etc.\n- **Outras Tecnologias**: Inclua quaisquer outras tecnologias relevantes, como APIs ou serviços de nuvem.\n\n## Funcionalidades\nDescreva as principais funcionalidades do projeto. Isso ajuda a dar uma visão clara do que o usuário pode esperar. Por exemplo:\n\n- **Funcionalidade 1**: Descrição da funcionalidade.\n- **Funcionalidade 2**: Descrição da funcionalidade.\n- **Funcionalidade 3**: Descrição da funcionalidade.\n\n## Instalação\nForneça instruções claras sobre como instalar e executar o projeto. Isso deve incluir:\n\n1. **Clone o repositório**: Instruções para clonar o repositório do projeto.\n   ```bash\n   git clone [URL do repositório]\n   ```"
+    },
+    {
+      "id": "4",
+      "title": "projeto 4",
+      "content": "Descrição do projeto 4"
+    }
+  ]
+}

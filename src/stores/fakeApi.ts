@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import data from '../../data.json'
+import data from '@/stores/data.json'
 
 // interface Project {
 //   id: string
