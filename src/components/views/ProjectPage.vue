@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { useFakeApi } from '@/stores/fakeApi'
-import { onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import MarkdownAtom from '@/components/atoms/MarkdownAtom.vue'
 import ButtonClose from '../atoms/ButtonClose.vue'
+import { useGlobalState } from '@/stores/globalState'
 
+const { opacity } = useGlobalState()
 const router = useRouter()
 const fakeApi = useFakeApi()
 
@@ -12,12 +14,23 @@ const id = useRoute().params.id
 
 const projet = ref({ content: '' })
 
+const currentOpacity = ref(0)
+
 const setTitle = (p: { title: string }) => {
   document.title = p.title
 }
 
 const setContent = (p: { content: string }) => {
   projet.value.content = p.content
+}
+
+const setOpacity = () => {
+  if (opacity.status.opacity <= 32) return
+  opacity.metod.setOpacity(32)
+}
+
+const setOpacityBack = () => {
+  opacity.metod.setOpacity(currentOpacity.value)
 }
 
 const close = () => {
@@ -28,9 +41,13 @@ onMounted(() => {
   const p = fakeApi.projects().getProjectId(id as string)
   if (!p) return
 
+  currentOpacity.value = opacity.status.opacity
+  setOpacity()
   setTitle(p)
   setContent(p)
 })
+
+onBeforeUnmount(setOpacityBack)
 </script>
 
 <template>
