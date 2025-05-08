@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import BoxBase from '../template/BoxBase.vue'
 import LinkBase from '../atoms/LinkBase.vue'
-// import ConfigTemplate from '../template/ConfigTemplate.vue'
-
 const links = [
   { name: 'Projetos', link: 'Meus projetos' },
   { name: 'Contatos', link: 'Estou por ai' },
@@ -28,10 +26,6 @@ const links = [
         />
       </nav>
     </div>
-
-    <!-- <div class="config-section">
-      <ConfigTemplate />
-    </div> -->
   </BoxBase>
 </template>
 
@@ -61,6 +55,7 @@ const links = [
     & .title {
       width: fit-content;
       margin-left: 10px;
+      text-wrap: nowrap;
 
       & h1,
       p {
