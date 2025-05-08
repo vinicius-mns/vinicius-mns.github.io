@@ -15,6 +15,21 @@ const configStorage = new LocalStorageApi(
 export const useGlobalState = defineStore('estado global', () => {
   const storage = reactive(configStorage.read())
 
+  const mobile = () => {
+    const status = reactive({
+      isMobileSize: false
+    })
+
+    const handleMobileSize = () => {
+      status.isMobileSize = window.innerWidth < 768
+    }
+
+    return {
+      status,
+      metod: { handleMobileSize }
+    }
+  }
+
   const trackBall = () => {
     const status = reactive({
       show: storage.trackBall,
@@ -106,6 +121,7 @@ export const useGlobalState = defineStore('estado global', () => {
     trackBall: trackBall(),
     darkMode: darkMode(),
     swing: swing(),
-    opacity: opacity()
+    opacity: opacity(),
+    mobile: mobile()
   }
 })
