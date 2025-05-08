@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, type Component } from 'vue'
+import { computed, onMounted, onUpdated, ref, type Component } from 'vue'
 import RangeImput from '../atoms/RangeImput.vue'
 import HeaderBase from '../molecules/HeaderBase.vue'
 
@@ -9,6 +9,8 @@ interface ComponentWithProps {
 }
 
 const props = defineProps<{ components: ComponentWithProps[] }>()
+
+const isMobile = ref(false)
 
 const columns = ref(4)
 
@@ -24,11 +26,23 @@ const ColumnsWithComponents = computed(() => {
 
   return projectInColumns
 })
+
+const handleMobileSize = () => {
+  const isMobileSize = (isMobile.value = window.innerWidth < 768)
+
+  if (isMobileSize) {
+    isMobile.value = true
+    columns.value = 1
+  }
+}
+
+onMounted(handleMobileSize)
+onUpdated(handleMobileSize)
 </script>
 
 <template>
   <div class="list-main-container">
-    <HeaderBase title="" class="list-header">
+    <HeaderBase title="" class="list-header" v-if="!isMobile">
       <div class="range-container">
         <p>Colunas:</p>
 

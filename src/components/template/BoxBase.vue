@@ -15,7 +15,7 @@ const sizes = {
     left: '10px',
     top: '28px',
     width: 'calc(100dvw - 10px * 2)',
-    height: 'calc(100dvh - 48px * 2)'
+    height: 'calc(100dvh - 28px * 2)'
   }
 }
 

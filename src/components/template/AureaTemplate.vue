@@ -26,9 +26,11 @@ const sizes = {
     left: '10px',
     top: '28px',
     width: 'calc(100dvw - 10px * 2)',
-    height: 'calc(100dvh - 48px * 2)'
+    height: 'calc(100dvh - 28px * 2)'
   }
 }
+
+const isMobileSize = ref(false)
 
 const size = reactive({ ...sizes.desktop })
 
@@ -40,7 +42,13 @@ const handleResize = () => {
   const screen = window.innerWidth
   const isMobile = screen < 768
 
-  isMobile ? Object.assign(size, sizes.mobile) : Object.assign(size, sizes.desktop)
+  if (isMobile) {
+    isMobileSize.value = true
+    Object.assign(size, sizes.mobile)
+  } else {
+    isMobileSize.value = false
+    Object.assign(size, sizes.desktop)
+  }
 }
 
 const handlePerspective = (mouse: MouseEvent) => {
@@ -78,6 +86,9 @@ watch(
     }, 500)
   }
 )
+
+// const isMobile = ref(window.innerWidth < 768)
+const isMobile = ref(false)
 </script>
 
 <template>
@@ -85,26 +96,48 @@ watch(
     :class="['box-container', 'border-all', { swing: swing.status.swing }]"
     @mousemove="handlePerspective"
   >
-    <div class="left border-right">
-      <div class="top">
-        <h1 :class="classIntro">{{ props.title }}</h1>
+    <div class="desktop" v-if="!isMobileSize">
+      <div class="left border-right">
+        <div class="top">
+          <h1 :class="classIntro">{{ props.title }}</h1>
+        </div>
+
+        <div class="bottom border-top">
+          <nav class="list">
+            <LinkBase
+              class="link"
+              v-for="(link, i) in props.links"
+              :key="i"
+              :to-name="link.nameLink"
+              :content="link.name"
+            />
+          </nav>
+        </div>
       </div>
 
-      <div class="bottom border-top">
-        <nav class="list">
-          <LinkBase
-            class="link"
-            v-for="(link, i) in props.links"
-            :key="i"
-            :to-name="link.nameLink"
-            :content="link.name"
-          />
-        </nav>
+      <div :class="['right', { 'intro-page': classIntroPage }]">
+        <slot />
       </div>
     </div>
 
-    <div :class="['right', { 'intro-page': classIntroPage }]">
-      <slot />
+    <div class="mobile" v-else>
+      <div class="top-mobile">
+        <h1 :class="classIntro">{{ props.title }}</h1>
+      </div>
+
+      <div class="mid-mobile">
+        <slot />
+      </div>
+
+      <nav class="bottom-mobile">
+        <LinkBase
+          class="link"
+          v-for="(link, i) in props.links"
+          :key="i"
+          :to-name="link.nameLink"
+          :content="link.name"
+        />
+      </nav>
     </div>
   </div>
 </template>
@@ -136,10 +169,10 @@ $height: v-bind('size.height');
   box-sizing: border-box;
   display: flex;
 
-  animation: init 0.5s forwards;
-
-  .intro {
-    animation: intro 0.5s forwards;
+  & .desktop {
+    width: 100%;
+    height: 100%;
+    display: flex;
   }
 
   & .left {
@@ -180,34 +213,6 @@ $height: v-bind('size.height');
           text-align: end;
           padding-left: 40px;
         }
-
-        // & .link {
-        //   margin: 0;
-        //   padding: 10px 10px 10px 30px;
-        //   text-align: end;
-        //   position: relative;
-        //   color: white;
-        //   text-decoration: none;
-
-        //   &:hover {
-        //     background-color: black;
-        //     filter: invert(1);
-        //     // background-color: white;
-        //     // color: black;
-        //   }
-        // }
-
-        // & .router-link-active {
-        //   &::before {
-        //     content: '';
-        //     background-color: white;
-        //     height: 6px;
-        //     aspect-ratio: 1;
-        //     position: absolute;
-        //     top: 18px;
-        //     left: 10px;
-        //   }
-        // }
       }
     }
   }
@@ -219,17 +224,46 @@ $height: v-bind('size.height');
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
 
-    // & p {
-    //   margin: 0;
-    //   padding: 3px;
-    //   cursor: pointer;
+  & .mobile {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
-    //   &:hover {
-    //     background-color: white;
-    //     color: black;
-    //   }
-    // }
+    & .top-mobile {
+      height: 12%;
+      width: 100%;
+      flex-shrink: 0;
+      border-bottom: solid 1px white;
+
+      & h1 {
+        margin: 12px;
+      }
+    }
+
+    & .mid-mobile {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    & .bottom-mobile {
+      width: 100%;
+      flex-shrink: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      border-top: solid 1px white;
+      overflow-x: auto;
+    }
+  }
+
+  animation: init 0.5s forwards;
+
+  .intro {
+    animation: intro 0.5s forwards;
   }
 
   & .intro-page {
@@ -250,7 +284,6 @@ $height: v-bind('size.height');
   }
   to {
     opacity: 1;
-    // width: $width;
     height: $height;
   }
 }
