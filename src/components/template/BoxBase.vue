@@ -66,7 +66,7 @@ $height: v-bind('size.height');
 
 .box-container {
   position: fixed;
-  top: calc($top - 10px);
+  top: $top;
   left: $left;
   // height: $height;
   box-sizing: border-box;
