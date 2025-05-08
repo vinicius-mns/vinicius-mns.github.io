@@ -27,7 +27,6 @@ const showRange = (v: boolean) => {
 }
 
 const setRange = (v: number) => {
-  console.log('chamado ainda')
   range.value = v
 
   emit('emitValue', v)
@@ -97,6 +96,15 @@ onMounted(() => {
     & h2 {
       margin: 0;
       padding: 0;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    & .range-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 
