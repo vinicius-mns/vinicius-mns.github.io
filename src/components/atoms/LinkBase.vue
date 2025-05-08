@@ -25,15 +25,17 @@ const props = defineProps<{
   }
 }
 
-.router-link-active {
-  &::before {
-    content: '';
-    background-color: white;
-    height: 6px;
-    aspect-ratio: 1;
-    position: absolute;
-    top: 18px;
-    left: 30px;
+@media screen and (min-width: 768px) {
+  .router-link-active {
+    &::before {
+      content: '';
+      background-color: white;
+      height: 6px;
+      aspect-ratio: 1;
+      position: absolute;
+      top: 18px;
+      left: 30px;
+    }
   }
 }
 </style>
