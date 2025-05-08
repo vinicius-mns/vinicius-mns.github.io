@@ -1,15 +1,34 @@
 <script setup lang="ts">
 import { RouterView, useRoute, useRouter } from 'vue-router'
 import IdleAnimation from './components/views/IdleAnimation.vue'
-import { computed, onMounted } from 'vue'
+import { computed, onBeforeUnmount, onMounted, watch } from 'vue'
 import BallTrack from './components/atoms/BallTrack.vue'
 import { useGlobalState } from './stores/globalState'
 
-const { trackBall, darkMode, opacity } = useGlobalState()
+const { trackBall, darkMode, opacity, mobile, swing } = useGlobalState()
 
 const darkModeClass = computed(() => darkMode.status.dark)
 
 const idleOpacity = computed(() => opacity.status.opacity / 100)
+
+const isMobileSize = () => mobile.status.isMobileSize
+
+const setStyleOnMobile = () => {
+  if (mobile.status.isMobileSize) {
+    trackBall.status.show = false
+    swing.status.swing = false
+  }
+}
+
+watch(isMobileSize, setStyleOnMobile)
+
+onMounted(() => {
+  window.addEventListener('resize', mobile.metod.handleMobileSize)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', mobile.metod.handleMobileSize)
+})
 </script>
 
 <template>
