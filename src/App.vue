@@ -1,39 +1,43 @@
 <script setup lang="ts">
-import { RouterView, useRoute, useRouter } from 'vue-router'
-import IdleAnimation from './components/views/IdleAnimation.vue'
-import { computed, onBeforeUnmount, onMounted, watch } from 'vue'
+import { RouterView, useRoute } from 'vue-router'
+import { computed, onMounted, ref } from 'vue'
 import BallTrack from './components/atoms/BallTrack.vue'
 import { useGlobalState } from './stores/globalState'
+import IdleAnimation from './components/views/IdleAnimation.vue'
+import IdleAnimation2 from './components/views/IdleAnimation2.vue'
+import IdleAnimation3 from './components/views/IdleAnimation3.vue'
 
-const { trackBall, darkMode, opacity, mobile, swing } = useGlobalState()
+const { trackBall, darkMode, opacity } = useGlobalState()
+const route = useRoute()
 
-const darkModeClass = computed(() => darkMode.status.dark)
-
+const idleId = ref(0)
 const idleOpacity = computed(() => opacity.status.opacity / 100)
-
-const isMobileSize = () => mobile.status.isMobileSize
-
-const setStyleOnMobile = () => {
-  if (mobile.status.isMobileSize) {
-    trackBall.status.show = false
-    swing.status.swing = false
-  }
-}
-
-watch(isMobileSize, setStyleOnMobile)
+const darkModeClass = computed(() => darkMode.status.dark)
+const classicIdle = computed(() => route.path.startsWith('/classic'))
 
 onMounted(() => {
-  window.addEventListener('resize', mobile.metod.handleMobileSize)
-})
+  const keyIdleId = 'idle-id'
+  const idleIdLocalStorage = localStorage.getItem(keyIdleId)
 
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', mobile.metod.handleMobileSize)
+  if (!idleIdLocalStorage) {
+    const initId = Math.floor(Math.random() * 2)
+    localStorage.setItem(keyIdleId, JSON.stringify(initId))
+  } else {
+    const id = Number(JSON.parse(idleIdLocalStorage))
+    localStorage.setItem(keyIdleId, JSON.stringify(id + 1))
+  }
+
+  idleId.value = Number(idleIdLocalStorage)
 })
 </script>
 
 <template>
   <div :class="['main', !darkModeClass && 'light-mode']" @mousemove="trackBall.metod.trackBall">
-    <IdleAnimation class="idle" v-if="opacity.status.opacity > 0" />
+    <IdleAnimation class="idle" v-if="classicIdle" />
+
+    <IdleAnimation2 class="idle" v-if="idleId % 2 !== 0 && !classicIdle" />
+
+    <IdleAnimation3 class="idle" v-if="idleId % 2 === 0 && !classicIdle" />
 
     <RouterView />
 

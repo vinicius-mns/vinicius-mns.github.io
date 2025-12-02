@@ -9,6 +9,23 @@ h1, h2, p, li {
   color: white;
 }
 
+h2 {
+  margin-top: 60px;
+}
+
+li {
+  margin-left: 50px;
+  list-style-type: none;
+}
+
+a {
+  color: white;
+
+  &:visited {
+    color: white;
+  }
+}
+
 img {
   max-width: 100%;
 }

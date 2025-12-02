@@ -25,6 +25,8 @@ const links = [
           :content="link.name"
         />
       </nav>
+
+      <a class="one-page-link" href="/#one">Versão atualizada</a>
     </div>
   </BoxBase>
 </template>
@@ -64,17 +66,8 @@ const links = [
     }
   }
 
-  & .config-section {
-    height: 100%;
-    width: 50%;
-    display: flex;
-    align-items: end;
-
-    padding: 40px;
-    box-sizing: border-box;
-
-    display: flex;
-    justify-content: flex-end;
+  & .one-page-link {
+    margin-left: 10px;
   }
 }
 </style>

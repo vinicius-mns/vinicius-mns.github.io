@@ -2,14 +2,12 @@
 import CheckboxBase from '@/components/atoms/CheckboxBase.vue'
 import { useGlobalState } from '@/stores/globalState'
 import FloatRange from '@/components/molecules/FloatRange.vue'
-import { onMounted, onUpdated } from 'vue'
 
 const { trackBall, darkMode, swing, opacity, mobile } = useGlobalState()
 </script>
 
 <template>
   <div class="config-page">
-    <!-- <ConfigTemplate /> -->
     <div class="config-options-container">
       <CheckboxBase
         class="option"
@@ -30,7 +28,7 @@ const { trackBall, darkMode, swing, opacity, mobile } = useGlobalState()
         v-if="!mobile.status.isMobileSize"
         class="option"
         :check="trackBall.status.show"
-        content="Track ball"
+        content="Pointer tracker"
         @emit-check="trackBall.metod.show($event)"
       />
 
@@ -49,7 +47,8 @@ const { trackBall, darkMode, swing, opacity, mobile } = useGlobalState()
 .config-page {
   height: 100%;
   width: 100%;
-  padding: 25%;
+  padding-top: 25%;
+  padding-right: 25%;
   box-sizing: border-box;
   display: flex;
   align-items: end;

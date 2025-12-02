@@ -5,17 +5,23 @@ import ContactMe from '@/components/views/ContactMe.vue'
 import MyPojects from '@/components/views/MyPojects.vue'
 import ConfigPage from '@/components/views/ConfigPage.vue'
 import Project from '@/components/views/ProjectPage.vue'
+import OnePage from '@/components/views/OnePage.vue'
+import NoFound from '@/components/views/NoFound.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
+      redirect: '/one'
+    },
+    {
+      path: '/classic',
       name: 'home',
       component: HomePage
     },
     {
-      path: '/main',
+      path: '/classic/main',
       name: 'main',
       component: MainPage,
       children: [
@@ -43,6 +49,15 @@ const router = createRouter({
           component: ConfigPage
         }
       ]
+    },
+    {
+      path: '/one',
+      name: 'Vinícius dev',
+      component: OnePage
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      component: NoFound
     }
   ]
 })

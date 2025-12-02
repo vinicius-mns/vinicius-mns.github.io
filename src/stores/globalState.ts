@@ -7,7 +7,7 @@ const configStorage = new LocalStorageApi(
     dark: true,
     swing: true,
     trackBall: true,
-    opacity: 64
+    opacity: 40
   },
   'config'
 )
