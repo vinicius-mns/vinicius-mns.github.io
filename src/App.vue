@@ -35,9 +35,9 @@ onMounted(() => {
   <div :class="['main', !darkModeClass && 'light-mode']" @mousemove="trackBall.metod.trackBall">
     <IdleAnimation class="idle" v-if="classicIdle" />
 
-    <IdleAnimation2 class="idle" v-if="idleId % 2 !== 0 && !classicIdle" />
+    <IdleAnimation2 class="idle" v-if="idleId % 2 === 0 && !classicIdle" />
 
-    <IdleAnimation3 class="idle" v-if="idleId % 2 === 0 && !classicIdle" />
+    <IdleAnimation3 class="idle" v-if="idleId % 2 !== 0 && !classicIdle" />
 
     <RouterView />
 
